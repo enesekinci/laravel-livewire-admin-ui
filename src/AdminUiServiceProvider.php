@@ -13,15 +13,32 @@ class AdminUiServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'admin-ui');
 
         $map = [
+            'actions' => 'admin.actions',
+            'alert' => 'admin.alert',
+            'badge' => 'admin.badge',
             'button' => 'admin.button',
-            'input' => 'admin.input',
-            'textarea' => 'admin.textarea',
-            'select' => 'admin.select',
             'card' => 'admin.card',
-            'table' => 'admin.table',
-            'stat' => 'admin.stat',
+            'checkbox' => 'admin.checkbox',
+            'error' => 'admin.error',
+            'field' => 'admin.field',
+            'fields' => 'admin.fields',
+            'file' => 'admin.file',
+            'hint' => 'admin.hint',
             'icon-button' => 'admin.icon-button',
+            'input' => 'admin.input',
+            'link' => 'admin.link',
+            'metric' => 'admin.metric',
+            'metrics' => 'admin.metrics',
+            'page' => 'admin.page',
+            'page-header' => 'admin.page-header',
             'pagination' => 'admin.pagination',
+            'panel' => 'admin.panel',
+            'section-title' => 'admin.section-title',
+            'select' => 'admin.select',
+            'stat' => 'admin.stat',
+            'table' => 'admin.table',
+            'textarea' => 'admin.textarea',
+            'toolbar' => 'admin.toolbar',
         ];
 
         foreach ($map as $view => $alias) {
