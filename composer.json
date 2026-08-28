@@ -1,0 +1,25 @@
+{
+    "name": "enesekinci/laravel-livewire-admin-ui",
+    "description": "Reusable Tailwind admin UI Blade components for Laravel Livewire panels.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/view": "^11.0|^12.0|^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EnesEkinci\\AdminUi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EnesEkinci\\AdminUi\\AdminUiServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
