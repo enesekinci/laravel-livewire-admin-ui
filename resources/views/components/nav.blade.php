@@ -5,7 +5,7 @@
     'panelLabel' => 'Yönetim',
     'siteName' => config('app.name'),
     'siteUrl' => url('/'),
-    'logoutRoute' => route('logout'),
+    'logoutRoute' => null,
 ])
 
 @php
@@ -80,11 +80,13 @@
                 <p class="truncate text-xs text-slate-400">{{ auth()->user()->email }}</p>
             </div>
         </div>
-        <form method="POST" action="{{ $logoutRoute }}">
-            @csrf
-            <button type="submit" class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white">
-                Çıkış Yap
-            </button>
-        </form>
+        @if ($logoutRoute)
+            <form method="POST" action="{{ $logoutRoute }}">
+                @csrf
+                <button type="submit" class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white">
+                    Çıkış Yap
+                </button>
+            </form>
+        @endif
     </div>
 </aside>
