@@ -61,6 +61,17 @@ class AdminUiServiceProvider extends ServiceProvider
             Blade::component("admin-ui::components.{$view}", 'admin-ui.'.str_replace('.', '-', $view));
         }
 
+        $navMap = [
+            'nav' => 'admin.nav',
+            'nav.item' => 'admin.nav.item',
+            'nav.group' => 'admin.nav.group',
+        ];
+
+        foreach ($navMap as $view => $alias) {
+            Blade::component("admin-ui::components.{$view}", $alias);
+            Blade::component("admin-ui::components.{$view}", 'admin-ui.'.str_replace('.', '-', $view));
+        }
+
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/admin-ui'),

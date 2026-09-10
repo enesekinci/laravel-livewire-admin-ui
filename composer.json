@@ -3,7 +3,14 @@
     "description": "Reusable Tailwind admin UI Blade components for Laravel Livewire panels.",
     "type": "library",
     "license": "MIT",
-    "keywords": ["laravel", "livewire", "admin", "tailwind", "blade", "ui"],
+    "keywords": [
+        "laravel",
+        "livewire",
+        "admin",
+        "tailwind",
+        "blade",
+        "ui"
+    ],
     "authors": [
         {
             "name": "Enes Ekinci",
@@ -33,5 +40,6 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "version": "1.3.0"
 }

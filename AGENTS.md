@@ -15,6 +15,7 @@ Reusable admin UI primitives for Laravel Livewire + Tailwind panels.
    - `x-admin.field`, `x-admin.fields`, `x-admin.section-title`
    - `x-admin.checkbox`, `x-admin.error`, `x-admin.hint`, `x-admin.link`, `x-admin.file`
    - `x-admin.badge`, `x-admin.alert`, `x-admin.metric`, `x-admin.metrics`, `x-admin.panel`
+   - `x-admin.nav`, `x-admin.nav.item`, `x-admin.nav.group`
 3. Do **not** invent parallel UI kits (no new Button/Input components in the app).
 4. Do **not** ask the user which button style to use — defaults:
    - Primary action → `x-admin.button` (default variant)
@@ -25,7 +26,29 @@ Reusable admin UI primitives for Laravel Livewire + Tailwind panels.
 6. Paginated lists: `<x-admin.pagination :paginator="$items" />` after the table (not raw `$items->links()`).
 7. Always keep Tailwind `@source` for this package views.
 8. Branding/layout shell stays in the **app**; this package is components only.
+9. Admin sidebar navigation uses `x-admin.nav` with an items array; do not hand-roll sidebar markup in apps.
+
+## Navigation usage
+
+Pass a structured `items` array to `x-admin.nav`. Each item is either a leaf (`route` + `match`) or a group (`children`).
+
+```blade
+<x-admin.nav
+    brand="#16a34a"
+    brandShort="KT"
+    panelLabel="Yönetim"
+    :items="[
+        ['label' => 'Dashboard', 'route' => 'admin.dashboard', 'match' => 'admin.dashboard', 'icon' => 'M3 12l2-2m0 0l7-7...'],
+        ['label' => 'Hayvanlar', 'icon' => 'M4.318 6.318a4.5...', 'children' => [
+            ['label' => 'Hayvanlar', 'route' => 'admin.animals.index', 'match' => 'admin.animals.*'],
+            ['label' => 'Irklar', 'route' => 'admin.animals.breeds', 'match' => 'admin.animals.breeds'],
+        ]],
+    ]"
+/>
+```
+
+Active state and group expansion are computed automatically from the current route.
 9. If a needed primitive is missing, extend **this package** (not the app), bump tag, require update.
 
 ## Do not package into this repo
-Domain CRUD, auth, business rules, navigation menus.
+Domain CRUD, auth, business rules.
