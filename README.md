@@ -27,12 +27,15 @@ Ensure Tailwind scans package views:
 | `x-admin.table` | Scrollable table wrapper |
 | `x-admin.stat` | Dashboard stat tile |
 | `x-admin.icon-button` | Compact icon actions (edit/trash/eye/…) |
+| `x-admin.checkbox` | Radio-style checkbox (`variant="switch"` \| `native`) |
 
 ## Examples
 
 ```blade
 <x-admin.button wire:click="save">Kaydet</x-admin.button>
 <x-admin.input wire:model="name" label="Ad" />
+<x-admin.checkbox wire:model="isActive" label="Aktif" />
+<x-admin.checkbox wire:model="isActive" label="Aktif" variant="switch" />
 <x-admin.card title="Ürünler">...</x-admin.card>
 <x-admin.icon-button icon="trash" variant="danger" wire:click="delete" label="Sil" />
 ```

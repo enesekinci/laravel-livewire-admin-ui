@@ -13,7 +13,7 @@ Reusable admin UI primitives for Laravel Livewire + Tailwind panels.
    - `x-admin.pagination` (pass `:paginator="$items"`)
    - `x-admin.page`, `x-admin.page-header`, `x-admin.toolbar`, `x-admin.actions`
    - `x-admin.field`, `x-admin.fields`, `x-admin.section-title`
-   - `x-admin.checkbox`, `x-admin.error`, `x-admin.hint`, `x-admin.link`, `x-admin.file`
+   - `x-admin.checkbox` (varsayılan: radio görünümü; `variant="switch"` | `native`), `x-admin.error`, `x-admin.hint`, `x-admin.link`, `x-admin.file`
    - `x-admin.badge`, `x-admin.alert`, `x-admin.metric`, `x-admin.metrics`, `x-admin.panel`
    - `x-admin.nav`, `x-admin.nav.item`, `x-admin.nav.group`
 3. Do **not** invent parallel UI kits (no new Button/Input components in the app).
