@@ -16,6 +16,7 @@ class AdminUiServiceProvider extends ServiceProvider
             'actions' => 'admin.actions',
             'alert' => 'admin.alert',
             'badge' => 'admin.badge',
+            'bulk-bar' => 'admin.bulk-bar',
             'button' => 'admin.button',
             'card' => 'admin.card',
             'checkbox' => 'admin.checkbox',
@@ -54,6 +55,8 @@ class AdminUiServiceProvider extends ServiceProvider
             'table.td' => 'admin.table.td',
             'table.empty' => 'admin.table.empty',
             'table.actions' => 'admin.table.actions',
+            'table.select-all' => 'admin.table.select-all',
+            'table.select-row' => 'admin.table.select-row',
         ];
 
         foreach ($tableMap as $view => $alias) {
